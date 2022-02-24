@@ -171,3 +171,19 @@ Have a look at the developer documentation, [[GNU]] or [[FreeBSD]] to get a deta
 [GNU]: https://www.gnu.org/prep/standards/html_node/DESTDIR.html
 
 [FreeBSD]: https://www.freebsd.org/doc/en/books/porters-handbook/porting-prefix.html
+
+# my_self
+
+```
+make CFLAGS="-DLTC_TEST_MPI" timing
+make CFLAGS="-DLTC_MRSA -DLTC_TEST_MPI" timing
+make CFLAGS="-DUSE_GMP -DGMP_DESC" EXTRALIBS="-lgmp" timing
+make EXTRALIBS="-lmbedtls -lmbedx509 -lmbedcrypto -L/home/zlj/WorkSpace/github/mbedtls/library" CFLAGS="-I/home/zlj/WorkSpace/github/mbedtls/include" timing
+make EXTRALIBS="-lmbedtls -lmbedx509 -lmbedcrypto -L/home/zlj/WorkSpace/tmp/mbedtls/library/x86" CFLAGS="-I/home/zlj/WorkSpace/tmp/mbedtls/mbedtls-mbedtls-2.16.0_optee_os/include -DEXT_MATH_LIB=mbedtls_mpi_desc" timing
+make EXTRALIBS="-lmbedtls -lmbedx509 -lmbedcrypto -L/home/zlj/WorkSpace/tmp/mbedtls/mbedtls/library" CFLAGS="-I/home/zlj/WorkSpace/tmp/mbedtls/mbedtls/include -DEXT_MATH_LIB=mbedtls_mpi_desc" timing
+make EXTRALIBS="-lmbedtls -lmbedx509 -lmbedcrypto -L/home/zlj/WorkSpace/tmp/mbedtls/mbedtls/library" CFLAGS="-I/home/zlj/WorkSpace/tmp/mbedtls/mbedtls/include -DEXT_MATH_LIB=mbedtls_mpi_desc -DCRT_SUPPORT" timing
+make CC=aarch64-none-linux-gnu-gcc EXTRALIBS="-lmbedtls -lmbedx509 -lmbedcrypto -L/home/zlj/WorkSpace/tmp/mbedtls/mbedtls/library" CFLAGS="-I/home/zlj/WorkSpace/tmp/mbedtls/mbedtls/include -DEXT_MATH_LIB=mbedtls_mpi_desc" timing
+make CC=aarch64-none-linux-gnu-gcc EXTRALIBS="-lmbedtls -lmbedx509 -lmbedcrypto -L/home/zlj/WorkSpace/tmp/mbedtls/mbedtls/library" CFLAGS="-I/home/zlj/WorkSpace/tmp/mbedtls/mbedtls/include -DEXT_MATH_LIB=mbedtls_mpi_desc -DCRT_SUPPORT" timing
+make EXTRALIBS="-lmbedtls -lmbedx509 -lmbedcrypto -L/home/zlj/WorkSpace/tmp/mbedtls/library/x86" CFLAGS="-I/home/zlj/WorkSpace/tmp/mbedtls/mbedtls-mbedtls-2.16.0_optee_os/include -DLTC_TEST_MPI -DEXT_MATH_LIB=mbedtls_mpi_desc" timing LTC_DEBUG=y
+make CC=aarch64-none-linux-gnu-gcc EXTRALIBS="-lmbedtls -lmbedx509 -lmbedcrypto -L/home/zlj/WorkSpace/tmp/mbedtls/mbedtls-mbedtls-2.16.0_optee_os/library" CFLAGS="-I/home/zlj/WorkSpace/tmp/mbedtls/mbedtls-mbedtls-2.16.0_optee_os/include -DLTC_TEST_MPI -DEXT_MATH_LIB=mbedtls_mpi_desc" timing LTC_DEBUG=y
+```
